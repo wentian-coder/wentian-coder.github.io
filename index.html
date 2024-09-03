@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>开心抽抽乐</title>
+    <title>抽奖工具</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -27,7 +27,7 @@
     </style>
 </head>
 <body>
-    <h1>开心抽抽乐</h1>
+    <h1>开心抽抽抽</h1>
     <table>
         <tr>
             <th>奖项</th>
@@ -69,7 +69,12 @@
         let fragments = 0;
         let chances = 10;
         const prizes = ["谢谢参与", "0.01元红包", "0.02元红包", "0.05元红包", "10元红包碎片", "10元红包"];
-        let probabilities = [20, 20, 10, 10, 39.9, 0.1];
+        let probabilities = [20, 20, 10, 10, 34.9, 0.1];
+
+        // 初始弹窗提醒
+        window.onload = function() {
+            alert("恭喜柯柯获得10次免费抽奖机会！");
+        };
 
         function getRandomPrize() {
             let rand = Math.random() * 100;
@@ -105,7 +110,7 @@
                 } else if (fragments === 10) {
                     totalAmount += 10;
                     fragments = 0;
-                    probabilities = [20, 20, 10, 10, 39.9, 0.1];
+                    probabilities = [20, 20, 10, 10, 34.9, 0.1];
                     document.getElementById('totalAmount').innerText = `累计金额: ￥${totalAmount.toFixed(2)}`;
                     document.getElementById('fragments').innerText = `10元红包碎片: ${fragments}/10`;
                     alert("恭喜您获得10元红包");
