@@ -96,6 +96,11 @@
             chances--;
             document.getElementById('chance').innerText = `剩余抽奖次数: ${chances}`;
             let prize = getRandomPrize();
+            if (prize === "谢谢参与") {
+                alert("继续努力，谢谢参与"); // 抽到“谢谢参与”时的特殊弹窗
+            } else {
+                alert(`恭喜您获得: ${prize}`); // 其他奖品的弹窗
+            }
             document.getElementById('result').innerText = `恭喜您获得: ${prize}`;
             if (prize.includes("元红包") && prize !== "10元红包碎片") {
                 let amount = parseFloat(prize.split("元红包")[0]);
